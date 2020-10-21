@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
+import './components/container';
+import Container from "./components/container";
 const axios = require('axios').default;
 //API Key: idq4GBavwG9WN9OQgxeyodtdTdmD96I8jYaOb6Hu
 function App() {
@@ -10,14 +12,12 @@ function App() {
   console.log(formattedDay);
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${formattedDay}`)
-    .then(res => console.log(res));
+    .then(res => console.log(res.data))
+    .then(res => setAPOD(res));
   }, []);
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      <Container/>
     </div>
   );
 }
