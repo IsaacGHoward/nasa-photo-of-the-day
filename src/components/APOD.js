@@ -1,12 +1,9 @@
 import React, {useState, useEffect} from "react";
 
-function APOD() {
+function APOD(props) {
+    console.log("APOD")
     return (
-      <div className="App">
-        <p>
-          APOD
-        </p>
-      </div>
+        <img src={props.image} href={props.title}/>
     );
   }
 

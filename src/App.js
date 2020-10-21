@@ -11,13 +11,19 @@ function App() {
   const formattedDay = today.slice(6)+'-'+today.slice(0,2)+'-'+today.slice(3,5);
   console.log(formattedDay);
   useEffect(() => {
+    const fetchAPOD = () => 
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${formattedDay}`)
-    .then(res => console.log(res.data))
-    .then(res => setAPOD(res));
-  }, []);
+    .then(res => {
+      console.log(res.data);
+      setAPOD(res.data);
+    });
+    fetchAPOD();
+  }, [])
+
+
   return (
     <div className="App">
-      <Container/>
+      <Container data={APOD_data}/>
     </div>
   );
 }

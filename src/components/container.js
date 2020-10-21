@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from "react";
-
-function Container() {
+import APOD from './APOD';
+import Details from './details';
+function Container(props) {
+  console.log(props);
+  if(!props.data) return <h3>Loading ...</h3>;
+  
     return (
-      <div className="App">
+      <div>
         <p>
-          Container
+          <APOD image={props.data.hdurl} title={props.data.title}/>
         </p>
       </div>
     );
