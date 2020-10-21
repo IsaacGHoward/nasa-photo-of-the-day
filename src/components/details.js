@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from "react";
 
-function Details() {
+function Details(props) {
     return (
-      <div className="App">
+    <div>
         <p>
-          Details
+          {props.data.explanation}
         </p>
-      </div>
+        <p>
+          Copyright : {props.data.copyright} | Title : {props.data.title}
+        </p>
+    </div>
     );
   }
 

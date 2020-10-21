@@ -7,9 +7,8 @@ function Container(props) {
   
     return (
       <div>
-        <p>
           <APOD image={props.data.hdurl} title={props.data.title}/>
-        </p>
+          <Details data={props.data}/>
       </div>
     );
   }
