@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import APOD from './APOD';
 import Details from './details';
 function Container(props) {
   console.log(props);
-  if(!props.data) return <h3>Loading ...</h3>;
+  if(!props.data) return <h3 className="App">Loading ...</h3>;
   
     return (
       <div className="Container">
