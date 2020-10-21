@@ -22,9 +22,7 @@ function App() {
 
 
   return (
-    <div className="App">
       <Container data={APOD_data}/>
-    </div>
   );
 }
 
