@@ -1,9 +1,10 @@
 import React from "react";
 import APOD from './APOD';
 import Details from './details';
+import { Spinner } from 'reactstrap';
 function Container(props) {
   console.log(props);
-  if(!props.data) return <h3 className="App">Loading ...</h3>;
+  if(!props.data) return <div className="loader"><Spinner style={{ width: '3rem', height: '3rem' }} /></div>
   
     return (
       <div className="Container">
